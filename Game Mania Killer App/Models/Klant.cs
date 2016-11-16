@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Mania_Killer_App.Models
 {
-    class Klant : User
+    public class Klant : User
     {
         string E_mail;
 

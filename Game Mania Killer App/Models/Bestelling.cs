@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Mania_Killer_App.Models
 {
-    class Bestelling
+    public class Bestelling
     {
         int Bestelnummer { get; set; }
 

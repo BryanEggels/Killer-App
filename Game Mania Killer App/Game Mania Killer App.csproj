@@ -124,6 +124,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\AdresSQLContext.cs" />
+    <Compile Include="Context\ArtikelSQLContext.cs" />
+    <Compile Include="Context\BestellingSQLContext.cs" />
+    <Compile Include="Context\CategorieSQLContext.cs" />
+    <Compile Include="Context\Database.cs" />
+    <Compile Include="Context\Interfaces\IAdresContext.cs" />
+    <Compile Include="Context\Interfaces\IArtikelContext.cs" />
+    <Compile Include="Context\Interfaces\IBestellingContext.cs" />
+    <Compile Include="Context\Interfaces\ICategorieContext.cs" />
+    <Compile Include="Context\Interfaces\IKlantContext.cs" />
+    <Compile Include="Context\Interfaces\ILeverancierContext.cs" />
+    <Compile Include="Context\Interfaces\IReviewContext.cs" />
+    <Compile Include="Context\Interfaces\IUserContext.cs" />
+    <Compile Include="Context\KlantSQLContext.cs" />
+    <Compile Include="Context\LeverancierSQLContext.cs" />
+    <Compile Include="Context\ReviewSQLContext.cs" />
+    <Compile Include="Context\UserSQLContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,6 +153,14 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\AdresRepo.cs" />
+    <Compile Include="Repos\ArtikelRepo.cs" />
+    <Compile Include="Repos\BestellingRepo.cs" />
+    <Compile Include="Repos\CategorieRepo.cs" />
+    <Compile Include="Repos\KlantRepo.cs" />
+    <Compile Include="Repos\LeverancierRepo.cs" />
+    <Compile Include="Repos\ReviewRepo.cs" />
+    <Compile Include="Repos\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -152,9 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Context\Interfaces\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Repos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
