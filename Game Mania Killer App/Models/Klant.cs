@@ -11,6 +11,5 @@ namespace Game_Mania_Killer_App.Models
         string E_mail;
 
         List<Bestelling> Bestellingen;
-
     }
 }

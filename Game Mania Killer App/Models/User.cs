@@ -10,6 +10,7 @@ namespace Game_Mania_Killer_App.Models
         int ID;
         string Naam;
         string Achternaam;
+
         Adres Adres;
 
         public override string ToString()
