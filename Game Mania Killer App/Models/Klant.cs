@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Game_Mania_Killer_App.Models
 {
-    class Klant
+    class Klant : User
     {
-        string Naam;
-        string Straat;
-        string Huisnummer;
+        string E_mail;
+
         List<Bestelling> Bestellingen;
-        
-        
 
     }
 }

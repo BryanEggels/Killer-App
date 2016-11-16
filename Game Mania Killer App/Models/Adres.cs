@@ -5,12 +5,11 @@ using System.Web;
 
 namespace Game_Mania_Killer_App.Models
 {
-    public class Categorie
+    public class Adres
     {
         int ID { get; set; }
-        string Naam { get; set; }
-        int ParentID { get; set; }
-
-        List<Artikel> Artikelen { get; set; }
+        string Straat { get; set; }
+        string Huisnummer { get; set; }
+        string Postcode { get; set; }
     }
 }

@@ -127,11 +127,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Adres.cs" />
     <Compile Include="Models\Artikel.cs" />
     <Compile Include="Models\Bestelling.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Klant.cs" />
+    <Compile Include="Models\Leverancier.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

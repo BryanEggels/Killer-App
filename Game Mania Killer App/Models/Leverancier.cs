@@ -5,12 +5,8 @@ using System.Web;
 
 namespace Game_Mania_Killer_App.Models
 {
-    public class Review
+    public class Leverancier : User
     {
-        string Comment { get; set; }
-
-
-        Klant Klant { get; set; }
-        Artikel Artikel { get; set; }
+        string Lnaam { get; set; }
     }
 }
