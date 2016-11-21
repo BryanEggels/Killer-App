@@ -19,6 +19,6 @@ namespace Game_Mania_Killer_App.Context
             }
         }
         //!!!UPDATE CONNECTIONSTRING!!!
-        private static string connectionstring = @"Data Source=192.168.20.200,20;Network Library=DBMSSOCN;Initial Catalog=Participation;User Id=sa;Password=admin;";
+        private static string connectionstring = @"Data Source=DESKTOP-L9N1EDV;Initial Catalog=Webshop;Integrated Security=True";
     }
 }
