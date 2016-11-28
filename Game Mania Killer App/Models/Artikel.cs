@@ -11,7 +11,7 @@ namespace Game_Mania_Killer_App.Models
         string Naam { get; set; }
         string Merk { get; set; }
         int Prijs { get; set; }
-
+        int aantal { get; set; } //new
         Leverancier Leverancier { get; set; }
         Categorie Categorie { get; set; }
 

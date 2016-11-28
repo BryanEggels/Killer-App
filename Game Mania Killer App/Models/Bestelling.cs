@@ -9,7 +9,8 @@ namespace Game_Mania_Killer_App.Models
     public class Bestelling
     {
         int Bestelnummer { get; set; }
+        public Klant klant { get; set; }
 
-        List<Artikel> Artikelen { get; set; }
+        public List<Artikel> Artikelen { get; set; }
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using Game_Mania_Killer_App.Context.Interfaces;
 using Game_Mania_Killer_App.Models;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Game_Mania_Killer_App.Context
 {
@@ -11,7 +13,40 @@ namespace Game_Mania_Killer_App.Context
     {
         public bool Add(Bestelling bestelling)
         {
-            throw new NotImplementedException();
+
+            DataTable table = new DataTable();
+            table.Columns.Add("Artikelnummer", typeof(int));
+            table.Columns.Add("Aantal",typeof(int));
+            
+            table.Rows.Add(9,1);
+            table.Rows.Add(5,    1);
+            table.Rows.Add(11, 1);
+            table.Rows.Add(8, 5);
+
+            string query = "exec dbo.insertbestelling @List, @KlantID";
+            try
+            {
+                using (SqlConnection con = Database.Connection)
+                {
+                    SqlCommand com = new SqlCommand("dbo.insertbestelling2", con);
+                    com.CommandType = CommandType.StoredProcedure;
+                    SqlParameter tvparam = com.Parameters.AddWithValue("@List", table);
+                    tvparam.SqlDbType = SqlDbType.Structured;
+                    SqlParameter klantparam = com.Parameters.AddWithValue("@KlantID", bestelling.klant.ID);
+
+                    if (com.ExecuteNonQuery() > 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            return false;
+            
         }
 
         public bool Delete(Bestelling bestelling)
