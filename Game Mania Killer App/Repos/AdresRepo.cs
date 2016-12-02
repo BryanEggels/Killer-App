@@ -15,9 +15,9 @@ namespace Game_Mania_Killer_App.Repos
         {
             this.context = context;
         }
-        public bool Add(Adres adres)
+        public int Add(Adres adres)
         {
-            return context.Add(adres);
+            return (int)context.Add(adres);
         }
 
         public bool Delete(Adres adres)

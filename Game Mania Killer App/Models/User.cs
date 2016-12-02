@@ -5,17 +5,20 @@ using System.Web;
 
 namespace Game_Mania_Killer_App.Models
 {
-    public abstract class User
+    public class User
     {
-        public int ID;
-        string Naam;
-        string Achternaam;
+        public int ID { get; set; }
+        public string Voornaam { get; set; }
+        public string Achternaam { get; set; }
+        public string Gebruikersnaam { get; set; }
+        public string Wachtwoord { get; set; }
+        public Adres Adres { get; set; }
 
-        Adres Adres;
+        
 
         public override string ToString()
         {
-            return Naam + " " + Achternaam;
+            return Voornaam + " " + Achternaam;
         }
     }
 }

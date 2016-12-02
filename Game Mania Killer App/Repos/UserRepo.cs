@@ -18,5 +18,13 @@ namespace Game_Mania_Killer_App.Repos
         {
             return context.GetAll();
         }
+        public User Login(string Gebruikersnaam, string Wachtwoord)
+        {
+            return context.Login(Gebruikersnaam, Wachtwoord);
+        }
+        public int? Add(User user)
+        {
+            return context.Add(user);
+        }
     }
 }

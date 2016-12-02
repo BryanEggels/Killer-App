@@ -1,0 +1,58 @@
+﻿@model Game_Mania_Killer_App.Models.Klant
+
+@{
+    ViewBag.Title = "Registreren";
+}
+
+<h2>Registreren</h2>
+
+
+
+
+<form action="@Url.Action("Postregister", "Account")" method="post">
+    <br />
+    <div class="row">
+        <label class="col-md-2 col-md-offset-1" for="Gebruikersnaam">Gebruikersnaam:</label>
+        <input class="col-md-2" type="text" name="Gebruikersnaam" placeholder="Gebruikersnaam" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Wachtwoord">Wachtwoord:</label>
+        <input class="col-md-2" type="password" name="Wachtwoord" placeholder="Wachtwoord" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Voornaam">Voornaam:</label>
+        <input class="col-md-2" type="text" name="Voornaam" placeholder="Voornaam" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Achternaam">Achternaam:</label>
+        <input class="col-md-2" type="text" name="Achternaam" placeholder=Achternaam required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Email">E-mail:</label>
+        <input class="col-md-2" type="email" name="Email" placeholder="E-mail adres" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Straat">Straat:</label>
+        <input class="col-md-2" type="text" name="Straat" placeholder="Straat" required/>
+
+        <input class="col-md-1" type="number" name="Huisnummer" placeholder="Huisnr" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Postcode">Postcode:</label>
+        <input class="col-md-2" type="text" name="Postcode" placeholder="Postcode" required />
+    </div>
+    <div class="row top-buffer">
+        <label class="col-md-2 col-md-offset-1" for="Plaats">Plaats:</label>
+        <input class="col-md-2" type="text" name="Plaats" placeholder="Plaats" required />
+    </div>
+    <div class="row top-buffer">
+        <div class="col-md-1 col-md-offset-4">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+
+
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>

@@ -10,7 +10,7 @@ namespace Game_Mania_Killer_App.Context.Interfaces
     public interface IAdresContext
     {
         List<Adres> GetAll();
-        bool Add(Adres adres);
+        int? Add(Adres adres);
         bool Delete(Adres adres);
 
     }

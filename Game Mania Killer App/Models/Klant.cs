@@ -8,9 +8,15 @@ namespace Game_Mania_Killer_App.Models
 {
     public class Klant : User
     {
-        string E_mail;
+        public string E_mail { get; set; }
 
         List<Bestelling> Bestellingen;
+
+
+        public Klant()
+        {
+            
+        }
 
 
     }

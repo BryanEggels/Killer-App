@@ -7,9 +7,10 @@ namespace Game_Mania_Killer_App.Models
 {
     public class Adres
     {
-        int ID { get; set; }
-        string Straat { get; set; }
-        string Huisnummer { get; set; }
-        string Postcode { get; set; }
+        public int? ID { get; set; }
+        public string Straat { get; set; }
+        public string Huisnummer { get; set; }
+        public string Postcode { get; set; }
+        public string Plaats { get; set; }
     }
 }

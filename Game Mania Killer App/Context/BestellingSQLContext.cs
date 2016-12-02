@@ -23,12 +23,11 @@ namespace Game_Mania_Killer_App.Context
             table.Rows.Add(11, 1);
             table.Rows.Add(8, 5);
 
-            string query = "exec dbo.insertbestelling @List, @KlantID";
             try
             {
                 using (SqlConnection con = Database.Connection)
                 {
-                    SqlCommand com = new SqlCommand("dbo.insertbestelling2", con);
+                    SqlCommand com = new SqlCommand("dbo.insertbestelling", con);
                     com.CommandType = CommandType.StoredProcedure;
                     SqlParameter tvparam = com.Parameters.AddWithValue("@List", table);
                     tvparam.SqlDbType = SqlDbType.Structured;

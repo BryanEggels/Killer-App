@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    top: 50px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -15,4 +16,10 @@ select,
 textarea {
     max-width: 280px;
 }
-
+.Login{
+    
+    float: right;
+    color: white;
+    margin-right:0px;
+}
+.top-buffer { margin-top:20px; }

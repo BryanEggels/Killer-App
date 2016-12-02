@@ -10,6 +10,8 @@ namespace Game_Mania_Killer_App.Context.Interfaces
     public interface IUserContext
     {
         List<User> GetAll();
+        User Login(string Gebruikersnaam, string Wachtwoord);
+        int? Add(User user);
 
     }
 }

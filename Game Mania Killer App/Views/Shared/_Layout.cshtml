@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+@model Game_Mania_Killer_App.Models.User
+@using Game_Mania_Killer_App.Models
+
+
+
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,6 +15,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -17,11 +25,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("Game Mania", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="Login">
+                @if (this.Session["User"] != null)
+            {
+                User user = (User)this.Session["User"];
+                 <div class="User">
+                     <p>Welkom @user.Gebruikersnaam !</p>
+                     <div class="row">
+                         <div class="col-md-8"> <a class="btn btn-default" href="@Url.Action("Logout","Account")">Logout</a></div>
+                     </div>
+                 </div>
+                }
+                else
+                {
+                    <form action="@Url.Action("Login","Account")" method="post">
+                        <div class="row">
+                            <div class="col-md-5"><label><b>Gebruikersnaam:</b></label></div>
+                            <div class="col-md-5"><input type="text" placeholder="Gebruikersnaam" name="Gebruikersnaam" required /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"><label><b>Wachtwoord:</b></label></div>
+                            <div class="col-md-5"><input type="password" placeholder="Wachtwoord" name="Wachtwoord" required /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"><input class="btn btn-default" type="submit" value="Login" /></div>
+                            <div class="col-md-5"><input type="checkbox" checked="checked" /> Remember me</div>
+                        </div>
+                    </form>
+                }
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
@@ -30,7 +68,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Game mania app</p>
         </footer>
     </div>
 
@@ -38,3 +76,5 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
+
+
