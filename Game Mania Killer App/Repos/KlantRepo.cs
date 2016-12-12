@@ -19,8 +19,14 @@ namespace Game_Mania_Killer_App.Repos
         public bool Add(Klant klant)
         {
             UserRepo urepo = new UserRepo(new UserSQLContext());
+
             AdresRepo arepo = new AdresRepo(new AdresSQLContext());
-            klant.ID = (int)urepo.Add(klant);
+
+            klant.ID = urepo.Add(klant);
+            if(klant.ID == 0)
+            {
+                return false;
+            }
             klant.Adres.ID = arepo.Add(klant.Adres);
             return context.Add(klant);
         }
@@ -33,6 +39,19 @@ namespace Game_Mania_Killer_App.Repos
         public List<Klant> GetAll()
         {
             return context.GetAll();
+        }
+
+        public Klant GetByID(int UserID)
+        {
+            UserRepo urepo = new UserRepo(new UserSQLContext());
+            Klant k = context.GetByID(UserID);
+            User u = urepo.GetByID(UserID);
+
+            k.Voornaam = u.Voornaam;
+            k.Gebruikersnaam = u.Gebruikersnaam;
+            k.Achternaam = u.Achternaam;
+            
+            return k;
         }
     }
 }

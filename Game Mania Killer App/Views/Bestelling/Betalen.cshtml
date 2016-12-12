@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Betalen";
+}
+
+<h2>Betalen</h2>
+
+@if(Session["User"] != null)
+{
+    <h1>Betaling succesvol afgerond!</h1>
+}
+else
+{
+    <h1>log eerst in!</h1>
+}
+

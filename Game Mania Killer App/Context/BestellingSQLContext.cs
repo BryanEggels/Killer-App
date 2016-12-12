@@ -17,11 +17,11 @@ namespace Game_Mania_Killer_App.Context
             DataTable table = new DataTable();
             table.Columns.Add("Artikelnummer", typeof(int));
             table.Columns.Add("Aantal",typeof(int));
-            
-            table.Rows.Add(9,1);
-            table.Rows.Add(5,    1);
-            table.Rows.Add(11, 1);
-            table.Rows.Add(8, 5);
+
+            foreach (Artikel a in bestelling.Artikelen)
+            {
+                table.Rows.Add(a.Artikelnummer, a.Aantal);
+            }
 
             try
             {

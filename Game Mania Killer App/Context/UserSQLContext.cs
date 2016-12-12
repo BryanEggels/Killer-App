@@ -17,9 +17,8 @@ namespace Game_Mania_Killer_App.Context
         public User Login(string Gebruikersnaam, string Wachtwoord)
         {
             string query = "SELECT * FROM [User] WHERE Gebruikersnaam = @Gebruiker and [Wachtwoord] = @Wachtwoord;";
-            
 
-            using(SqlConnection con = Database.Connection)
+            using (SqlConnection con = Database.Connection)
             {
                 SqlCommand cmd = new SqlCommand(query, con);
 
@@ -28,27 +27,28 @@ namespace Game_Mania_Killer_App.Context
 
                 try
                 {
-                    int? userId = (int?)cmd.ExecuteScalar();
-                    if (userId > 0)
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
                         return new User
                         {
-                            ID = (int)userId
+                            ID = Convert.ToInt32(reader["ID"]),
+                            Voornaam = reader["Voornaam"].ToString(),
+                            Achternaam = reader["Achternaam"].ToString(),
+                            Gebruikersnaam = reader["Gebruikersnaam"].ToString()
                         };
-                        
                     }
-                    
                 }
-                catch(SqlException e)
+                catch (SqlException e)
                 {
                     Console.WriteLine(e.Message);
                 }
                 return null;
-                
+
             }
         }
 
-        public int? Add(User user)
+        public int Add(User user)
         {
             string query = "INSERT INTO [User] (Voornaam, Achternaam, Gebruikersnaam, Wachtwoord) VALUES (@Voornaam, @Achternaam, @Gebruikersnaam, @Wachtwoord)" +
                 "SELECT SCOPE_IDENTITY()";
@@ -71,10 +71,40 @@ namespace Game_Mania_Killer_App.Context
                 {
                     Console.WriteLine(e.Message);
                 }
-                return 0;   
+                return 0;
             }
-            
         }
+        public User GetByID(int UserID)
+        {
+            string query = "SELECT * FROM [User] WHERE ID = @id;";
 
+            using (SqlConnection con = Database.Connection)
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@id", UserID);
+
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    {
+                        return new User
+                        {
+                            ID = Convert.ToInt32(reader["ID"]),
+                            Voornaam = reader["Voornaam"].ToString(),
+                            Achternaam = reader["Achternaam"].ToString(),
+                            Gebruikersnaam = reader["Gebruikersnaam"].ToString()
+                        };
+                    }
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return null;
+            }
+
+        }
     }
 }

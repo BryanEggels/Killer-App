@@ -34,5 +34,9 @@ namespace Game_Mania_Killer_App.Repos
         {
             return context.GetAll(categorie);
         }
+        public Artikel Get(int artikelnummer)
+        {
+            return context.Get(artikelnummer);
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Game_Mania_Killer_App.Controllers
             {
                 this.Session["User"] = gebruiker;
                 gebruiker.Gebruikersnaam = Gebruikersnaam;
-                return RedirectToAction("Index", "Home");
+                return Redirect(Request.UrlReferrer.PathAndQuery);
             }
             return View();
         }

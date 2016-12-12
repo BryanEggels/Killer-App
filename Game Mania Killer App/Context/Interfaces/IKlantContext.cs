@@ -12,5 +12,6 @@ namespace Game_Mania_Killer_App.Context.Interfaces
         bool Add(Klant klant);
         bool Delete(Klant klant);
         List<Klant> GetAll();
+        Klant GetByID(int UserID);
     }
 }

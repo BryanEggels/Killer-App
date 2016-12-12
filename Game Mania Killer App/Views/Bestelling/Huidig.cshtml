@@ -1,0 +1,20 @@
+﻿@model Game_Mania_Killer_App.Models.Bestelling
+@using Game_Mania_Killer_App.Models
+
+@{
+    ViewBag.Title = "Huidig";
+}
+
+
+<h2>Huidige Bestelling</h2>
+<br /><br />
+@if (this.Session["bestelling"] != null)
+{
+    Bestelling b = (Bestelling)this.Session["bestelling"];
+    foreach (Artikel a in b.Artikelen)
+    {
+        <h4>@a.ToString() - @a.Aantal x</h4>
+    }
+    <br /><br />
+    <a class="btn btn-success" href="">Betaling afronden!</a>
+}

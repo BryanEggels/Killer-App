@@ -1,12 +1,9 @@
-﻿
-@model Game_Mania_Killer_App.Models.User
+﻿@model Game_Mania_Killer_App.Models.User
 @using Game_Mania_Killer_App.Models
 
-
-
 <!DOCTYPE html>
-
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +11,8 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link rel="icon" href="https://www.gamemania.nl/favicon.ico?v=ff8b5f41-15e2-493c-a145-6e2e6f9c8f5e" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -26,17 +25,29 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink("Game Mania", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
+                <a href="/Games" class="dropdown-toggle navbar-brand" data-toggle="dropdown" aria-haspopup="true">Games</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/Games/Xbox">Xbox</a></li>
+                    <li><a href="/Games/Playstation">Playstation</a></li>
+                    <li><a href="/Games/Wii">Wii</a></li>
+                </ul>
             </div>
             <div class="Login">
                 @if (this.Session["User"] != null)
             {
                 User user = (User)this.Session["User"];
                  <div class="User">
-                     <p>Welkom @user.Gebruikersnaam !</p>
+                     <p>Welkom @user.ToString()</p>
+
                      <div class="row">
-                         <div class="col-md-8"> <a class="btn btn-default" href="@Url.Action("Logout","Account")">Logout</a></div>
+                         <div class="col-md-4"> <a class="btn btn-default" href="@Url.Action("Logout","Account")">Logout</a></div>
+                         
+                         <a class="winkelmand" href="@Url.Action("Huidig", "Bestelling")">
+                             <img src="http://i.imgur.com/TRPjJEY.jpg" height="25" width="30" />
+                         </a>
+                         <div class="winkelmand btn btn-success">Winkelmand</div> 
                      </div>
                  </div>
                 }
@@ -53,7 +64,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-5"><input class="btn btn-default" type="submit" value="Login" /></div>
-                            <div class="col-md-5"><input type="checkbox" checked="checked" /> Remember me</div>
+                            <div class="col-md-5"><a href="@Url.Action("Register","Account")"> Geen account?</a></div>
                         </div>
                     </form>
                 }
@@ -68,7 +79,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My Game mania app</p>
+            <p>&copy; @DateTime.Now.Year - Game mania</p>
         </footer>
     </div>
 

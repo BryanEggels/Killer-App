@@ -7,10 +7,10 @@ namespace Game_Mania_Killer_App.Models
 {
     public class Categorie
     {
-        int ID { get; set; }
-        string Naam { get; set; }
-        int ParentID { get; set; }
+        public int ID { get; set; }
+        public string Naam { get; set; }
+        public int ParentID { get; set; }
 
-        List<Artikel> Artikelen { get; set; }
+        public List<Artikel> Artikelen { get; set; }
     }
 }

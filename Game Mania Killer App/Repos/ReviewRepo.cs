@@ -35,5 +35,9 @@ namespace Game_Mania_Killer_App.Repos
         {
             return context.GetAll(klant);
         }
+        public List<Review> GetAll(Artikel artikel)
+        {
+            return context.GetAll(artikel);
+        }
     }
 }

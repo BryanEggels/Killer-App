@@ -22,9 +22,14 @@ namespace Game_Mania_Killer_App.Repos
         {
             return context.Login(Gebruikersnaam, Wachtwoord);
         }
-        public int? Add(User user)
+        public int Add(User user)
         {
             return context.Add(user);
+        }
+
+        public User GetByID(int UserID)
+        {
+            return context.GetByID(UserID);
         }
     }
 }

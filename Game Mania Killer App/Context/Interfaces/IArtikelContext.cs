@@ -14,5 +14,6 @@ namespace Game_Mania_Killer_App.Context.Interfaces
 
         bool Delete(Artikel artikel);
         bool Add(Artikel artikel);
+        Artikel Get(int artikelnummer);
     }
 }

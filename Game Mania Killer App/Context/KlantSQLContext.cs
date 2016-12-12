@@ -47,5 +47,34 @@ namespace Game_Mania_Killer_App.Context
         {
             throw new NotImplementedException();
         }
+        public Klant GetByID(int UserID)
+        {
+            string query = "SELECT * FROM Klant WHERE GebruikersID = @id;";
+
+            using (SqlConnection con = Database.Connection)
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("@id", UserID);
+
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    {
+                        return new Klant
+                        {
+                            ID = Convert.ToInt32(reader["GebruikersID"]),
+                            E_mail = reader["E-mail"].ToString()
+                        };
+                    }
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return null;
+            }
+        }
     }
 }

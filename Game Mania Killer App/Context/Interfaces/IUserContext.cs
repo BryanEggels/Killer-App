@@ -11,7 +11,8 @@ namespace Game_Mania_Killer_App.Context.Interfaces
     {
         List<User> GetAll();
         User Login(string Gebruikersnaam, string Wachtwoord);
-        int? Add(User user);
+        int Add(User user);
+        User GetByID(int UserID);
 
     }
 }

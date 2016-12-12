@@ -7,10 +7,11 @@ namespace Game_Mania_Killer_App.Models
 {
     public class Review
     {
-        string Comment { get; set; }
+        public string Comment { get; set; }
+        public int Score { get; set; }
+        public string Titel { get; set; }
 
-
-        Klant Klant { get; set; }
-        Artikel Artikel { get; set; }
+        public Klant Klant { get; set; }
+        public Artikel Artikel { get; set; }
     }
 }

@@ -11,7 +11,9 @@ namespace Game_Mania_Killer_App.Context.Interfaces
     {
         List<Review> GetAll();
         List<Review> GetAll(Klant klant);
+        List<Review> GetAll(Artikel artikel);
         bool Add(Review review);
         bool Delete(Review review);
+
     }
 }
