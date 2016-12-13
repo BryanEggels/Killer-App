@@ -18,7 +18,7 @@ namespace Game_Mania_Killer_App.Controllers
             if (artikel == null)
             {
                 
-                ViewBag.artikelen = arepo.GetAll();
+                ViewBag.artikelen = arepo.GetAll(new Categorie { ID=1});
                 return View();
             }
             ViewBag.artikel = arepo.Get(Convert.ToInt32(artikel));

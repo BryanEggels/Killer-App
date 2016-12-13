@@ -13,6 +13,7 @@ namespace Game_Mania_Killer_App.Models
         public string Gebruikersnaam { get; set; }
         public string Wachtwoord { get; set; }
         public Adres Adres { get; set; }
+        public int Rechten { get; set; }
 
         
 

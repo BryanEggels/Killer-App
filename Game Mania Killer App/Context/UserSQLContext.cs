@@ -35,7 +35,8 @@ namespace Game_Mania_Killer_App.Context
                             ID = Convert.ToInt32(reader["ID"]),
                             Voornaam = reader["Voornaam"].ToString(),
                             Achternaam = reader["Achternaam"].ToString(),
-                            Gebruikersnaam = reader["Gebruikersnaam"].ToString()
+                            Gebruikersnaam = reader["Gebruikersnaam"].ToString(),
+                            Rechten = Convert.ToInt32(reader["Rechten"])
                         };
                     }
                 }

@@ -24,10 +24,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
+                                
                 @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
+                
                 <a href="/Games" class="dropdown-toggle navbar-brand" data-toggle="dropdown" aria-haspopup="true">Games</a>
+                @if (this.Session["User"] != null)
+                {
+                    User user = (User)this.Session["User"];
+                    if (user.Rechten == 1)
+                    {
+                        <a href="Admin/Beheeromgeving" class="navbar-brand">Admin Panel</a>
+                    }
+                }
                 <ul class="dropdown-menu">
                     <li><a href="/Games/Xbox">Xbox</a></li>
                     <li><a href="/Games/Playstation">Playstation</a></li>
@@ -36,8 +44,9 @@
             </div>
             <div class="Login">
                 @if (this.Session["User"] != null)
-            {
-                User user = (User)this.Session["User"];
+                {
+                    User user = (User)this.Session["User"];
+
                  <div class="User">
                      <p>Welkom @user.ToString()</p>
 

@@ -23,7 +23,7 @@ namespace Game_Mania_Killer_App.Controllers
                 gebruiker.Gebruikersnaam = Gebruikersnaam;
                 return Redirect(Request.UrlReferrer.PathAndQuery);
             }
-            return View();
+            return Redirect(Request.UrlReferrer.PathAndQuery);
         }
         public ActionResult Logout()
         {
