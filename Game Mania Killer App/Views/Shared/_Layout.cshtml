@@ -33,7 +33,7 @@
                     User user = (User)this.Session["User"];
                     if (user.Rechten == 1)
                     {
-                        <a href="Admin/Beheeromgeving" class="navbar-brand">Admin Panel</a>
+                        <a href="@Url.Action("Beheeromgeving","Admin")" class="navbar-brand">Admin Panel</a>
                     }
                 }
                 <ul class="dropdown-menu">
@@ -96,5 +96,4 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
-
 
