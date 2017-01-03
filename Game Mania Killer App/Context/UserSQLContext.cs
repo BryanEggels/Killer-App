@@ -45,7 +45,6 @@ namespace Game_Mania_Killer_App.Context
                     Console.WriteLine(e.Message);
                 }
                 return null;
-
             }
         }
 

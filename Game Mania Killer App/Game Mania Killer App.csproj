@@ -199,6 +199,8 @@
     <Content Include="Views\Bestelling\Huidig.cshtml" />
     <Content Include="Views\Bestelling\Betalen.cshtml" />
     <Content Include="Views\Admin\Beheeromgeving.cshtml" />
+    <Content Include="Views\Games\Playstation.cshtml" />
+    <Content Include="Views\Games\Wii.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

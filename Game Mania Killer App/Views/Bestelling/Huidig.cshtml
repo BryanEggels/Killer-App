@@ -10,11 +10,20 @@
 <br /><br />
 @if (this.Session["bestelling"] != null)
 {
+    double tot = 0;
     Bestelling b = (Bestelling)this.Session["bestelling"];
     foreach (Artikel a in b.Artikelen)
     {
-        <h4>@a.ToString() - @a.Aantal x</h4>
+
+        <h4>@a.ToString() - @a.Aantal x - € @a.Prijs</h4>
+        tot += a.Prijs;
     }
+    <hr />
+    <h3>Totaalprijs: € @tot</h3>
     <br /><br />
     <a class="btn btn-success" href="@Url.Action("Betalen","Bestelling")">Betaling afronden!</a>
+}
+else{
+    <h4>U heeft nog niks in uw winkelmand!</h4>
+
 }

@@ -1,0 +1,94 @@
+﻿@model List<Game_Mania_Killer_App.Models.Artikel>
+@using Game_Mania_Killer_App.Models
+
+@{
+    ViewBag.Title = "Playstation";
+}
+
+<h2>Playstation</h2>
+<div class="container body-content">
+
+    @if (ViewBag.artikel == null && ViewBag.artikelen != null)
+    {
+        foreach (Artikel a in ViewBag.artikelen)
+        {
+            <div class="col-md-3">
+                <div class="top-buffer">
+                    <h4>@a.ToString()</h4>
+                    <a href="@Url.Action("Playstation", "Games", new { artikel = a.Artikelnummer })">
+                        <img src="@a.Afbeelding" height="200" width="140" />
+                    </a>
+                    <h3>€@string.Format("{0:0.00}", a.Prijs)</h3>
+                </div>
+            </div>
+        }
+    }
+    else if (ViewBag.artikel != null)
+    {
+        Artikel art = ViewBag.artikel;
+        <div class="row">
+            <div class="col-md-3">
+                <div class="top-buffer">
+                    <h4>@art.ToString()</h4>
+                    <img src="@ViewBag.artikel.Afbeelding" height="400" width="280" />
+                    <h3>€@string.Format("{0:0.00}", art.Prijs)</h3>
+                    <a class="btn btn-success" href="@Url.Action("add", "Bestelling", new { artikel = art.Artikelnummer })">In winkelmand!</a>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-push-1  top-buffer">
+                <h4>Omschrijving:</h4>
+                @ViewBag.artikel.Description
+            </div>
+        </div>
+        foreach (Review r in art.Reviews)
+        {
+            if (r.Titel != "" && r.Comment != "")
+            {
+                <hr />
+                <h2>@r.Titel</h2>
+                <h4>@r.Comment</h4> <h6>Geschreven door: @r.Klant.Gebruikersnaam</h6>
+                <h5>Score: @r.Score</h5>
+            }
+        }
+    
+        <hr />
+        if (this.Session["User"] != null)
+        {
+            <form action="@Url.Action("add", "Review", new { artikel = art.Artikelnummer })" method="post">
+                <h5>Wat vindt je van het product?</h5>
+                <input type="text" name="titel" placeholder="Titel" /><br />
+                <textarea name="comment" cols="50" rows="5" title="Schrijf je eigen review!" placeholder="Commentaar"></textarea><br /><br />
+
+                Score:
+                <label>
+                    1
+                    <input style="display:block;" type="radio" id="score" name="score" value=1 checked="checked" />
+                </label>
+                <label>
+                    2
+                    <input style="display:block;" type="radio" id="score" name="score" value=2 />
+                </label>
+                <label>
+                    3
+                    <input style="display:block;" type="radio" id="score" name="score" value=3 />
+                </label>
+                <label>
+                    4
+                    <input style="display:block;" type="radio" id="score" name="score" value=4 />
+                </label>
+                <label>
+                    5
+                    <input style="display:block;" type="radio" id="score" name="score" value=5 />
+                </label>
+
+                <br />
+                <input class="btn btn-success" type="submit" value="Plaats review!" />
+            </form>
+        }
+    }
+    else
+    {
+        <h5>Nog geen artikelen op deze pagina</h5>
+    }
+
+</div>       

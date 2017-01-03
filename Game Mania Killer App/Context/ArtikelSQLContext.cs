@@ -84,7 +84,7 @@ namespace Game_Mania_Killer_App.Context
                             Artikelnummer = Convert.ToInt32(reader["Artikelnummer"]),
                             Naam = reader["Naam"].ToString(),
                             Merk = reader["Merk"].ToString(),
-                            Prijs = Convert.ToInt32(reader["Prijs"]),
+                            Prijs = Convert.ToDouble(reader["Prijs"]),
                             Afbeelding = reader["Afbeelding"].ToString(),
                             Description = reader["Description"].ToString(),
 
@@ -129,7 +129,7 @@ namespace Game_Mania_Killer_App.Context
                             Artikelnummer = Convert.ToInt32(reader["Artikelnummer"]),
                             Naam = reader["Naam"].ToString(),
                             Merk = reader["Merk"].ToString(),
-                            Prijs = Convert.ToInt32(reader["Prijs"]),
+                            Prijs = Convert.ToDouble(reader["Prijs"]),
                             Afbeelding = reader["Afbeelding"].ToString(),
                             Description = reader["Description"].ToString(),
 

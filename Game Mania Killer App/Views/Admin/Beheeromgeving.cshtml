@@ -1,0 +1,26 @@
+﻿@model Game_Mania_Killer_App.Models.User
+@using Game_Mania_Killer_App.Models
+
+@{
+    ViewBag.Title = "Beheeromgeving";
+}
+
+<h2>Beheeromgeving</h2>
+
+@if (Session["User"] != null)
+{
+    User user = (User)Session["User"];
+    if (user.Rechten == 1 || user.Rechten == 2) //1 Is Beheerder, 2 is Leverancier
+    {
+        <br />
+        <h4>Hier staan nog geen dingen want het is geen <b>m</b>ust :/</h4>
+    }
+    else
+    {
+        <h4>Deze omgeving is alleen voor beheerders</h4>
+    }
+}
+else
+{
+    <h4>Please log in!</h4>
+} 
