@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Context\BestellingSQLContextTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\ReviewRepoTests.cs" />
+    <Compile Include="Repos\UserRepoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Game Mania Killer App\Game Mania Killer App.csproj">

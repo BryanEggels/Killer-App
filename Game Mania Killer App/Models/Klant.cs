@@ -9,6 +9,7 @@ namespace Game_Mania_Killer_App.Models
     public class Klant : User
     {
         public string E_mail { get; set; }
+        public Adres adres { get; set; }
 
 
     }

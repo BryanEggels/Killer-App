@@ -17,8 +17,10 @@ namespace Game_Mania_Killer_App.Context.Tests
         {
             BestellingSQLContext context = new BestellingSQLContext();
             Bestelling b = new Bestelling();
-            Klant k = new Klant();
-            k.ID = 5;
+            b.Artikelen.Add(new Artikel { Artikelnummer = 1 });
+            b.Artikelen.Add(new Artikel { Artikelnummer = 5 });
+            b.Artikelen.Add(new Artikel { Artikelnummer = 9 });
+            Klant k = new Klant { ID = 5 };
             b.klant = k;
 
             Assert.AreEqual(true, context.Add(b));

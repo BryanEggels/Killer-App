@@ -7,6 +7,7 @@ namespace Game_Mania_Killer_App.Models
 {
     public class Leverancier : User
     {
-        string Lnaam { get; set; }
+        public string Lnaam { get; set; }
+        public Adres adres { get; set; }
     }
 }
